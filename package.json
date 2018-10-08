@@ -10,7 +10,6 @@
     "watch": "ts-node scripts/watch.ts 'ts-node test.ts'",
     "build": "tsc --outDir ./dist/",
     "sample": "ts-node sample.ts"
-
   },
   "author": "",
   "license": "ISC",

@@ -2,7 +2,7 @@ import mysql, { FieldInfo } from "mysql";
 import fs from "fs";
 import { json } from "Express";
 import dotenv, { config } from "dotenv";
-import DB from "../core/db";
+import DB from "../core/DB/db";
 
 dotenv.config();
 

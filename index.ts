@@ -1,31 +1,34 @@
 import Express from "Express"
 import dotenv from "dotenv";
-import DB from "./core/db";
+import DB from "./core/DB/db";
+import { readlink } from "fs";
 
 dotenv.config();
 
 const app:Express.Express=Express();
+const listen_port=process.env.LISTEN_PORT||9000;
 
-/*
 app.listen(
-  9000,()=>{
+  listen_port
+  ,()=>{
+    console.log(`SERVER PROCESS START ${listen_port}`);
+    app.use(Express.static("./public"));
 
-    console.log("PROCESS START");
-    app.get("/",
+    app.get("/a",
     (req:Express.Request,res:Express.Response)=>{
-      res.json([1,2,3,4,5]);
+
+      DB.Select("SELECT 1,2,3,4,5")
+      .then(
+        $result=>res.json($result)
+      );
+      
     });
     
   }
 );
-*/
 
-DB.Select(`
-  SELECT 1,2,3
-`,{});
 
-process.on("exit",()=>{
-  
+process.on("exit",()=>{  
   cleanExit();
 });
 

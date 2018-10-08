@@ -1,4 +1,5 @@
 import mysql, { FieldInfo, MysqlError } from "mysql"
+import Table from "./table";
 
 export default class DB {
   private static $instance: DB;
@@ -26,7 +27,7 @@ export default class DB {
     return DB.$instance;
   }
 
-  public static Select($sql: string, $params: any): Promise<Object> {
+  public static Select($sql: string, $params: any=[]): Promise<Object> {
     return new Promise<Object>(
       (OK, NG) => {
 
@@ -34,9 +35,10 @@ export default class DB {
           $sql,
           $params,
           (e, rows, fields) => {
-            console.log(typeof (e));
-            console.log(typeof (rows));
-            console.log(typeof (fields));
+            if(e){
+             return NG(e);
+            }
+
             return OK(rows)
           });
 
