@@ -1,51 +1,48 @@
 import mysql, { FieldInfo, MysqlError } from "mysql"
-import Table from "./table";
+import DBConnection from "./DBConnection";
+
 
 export default class DB {
   private static $instance: DB;
 
-  public connection: mysql.Connection;
+  public get connection():mysql.Connection{
+    return this.$connection;
+  }
 
 
+  public $connection:mysql.Connection;
 
-  private constructor() {
-    this.connection = mysql.createConnection({
+  protected constructor() 
+  {
+    this.$connection = mysql.createConnection({
       "host": process.env.DB_HOST,
       "user": process.env.DB_USER,
       "password": process.env.DB_PASS,
       "database": process.env.DB_DATABASE
     });
   }
-
+  
+  
 
   public static get Instance(): DB {
-    if (!DB.$instance) {
-      DB.$instance = new DB();
-
-      
-    }
-    return DB.$instance;
+    return this.$instance;
   }
+  
 
   public static Select($sql: string, $params: any=[]): Promise<Object> {
     return new Promise<Object>(
       (OK, NG) => {
-
-        DB.Instance.connection.query(
+        this.Instance.connection.query(
           $sql,
           $params,
           (e, rows, fields) => {
             if(e){
              return NG(e);
             }
-
             return OK(rows)
           });
-
       }
     );
   }
-
-
 }
 

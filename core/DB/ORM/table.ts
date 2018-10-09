@@ -1,25 +1,26 @@
 
-export namespace DB{
-  export abstract class PK<T>
+export namespace LORM{
+
+  export abstract class PrimaryKey
     extends Array<string>{
     
 
-
+      constructor(){
+        super()
+      }
   }
   
-  export abstract class Table<T>{ 
-    public get PK():PK<T>{
-      return [
-        "id"
-      ];
-    }
+  export abstract class Table
+    <PK extends PrimaryKey>{
+      
+    protected abstract initPK():PK;
 
-    public findPK<T>(pk:PK<T>):Record<T>{
+    public findPK(pk:PK):Record{
       return [];
     }
 
     public findIndex(column_name:string,needle:any){
-      
+
     }
 
 
@@ -32,7 +33,7 @@ export namespace DB{
       return this.constructor.name;
     }
   
-    public collection<NM>():Array<T>{
+    public collection():Array<string>{
 
       
       return [
@@ -41,7 +42,7 @@ export namespace DB{
     }
   }
 
-  export abstract class Record<T>{
+  export abstract class Record{
     
 
   }
