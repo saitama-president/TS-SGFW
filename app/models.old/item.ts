@@ -1,20 +1,17 @@
 import * as SEQ from "sequelize-typescript"
-import * as Models from "../models"
+import * as Models from "./models"
 
 
 @SEQ.Table
-class UserItem extends SEQ.Model<Models.UserItem> {
+class Item extends SEQ.Model<Models.UserItem> {
 
     @SEQ.AutoIncrement
     @SEQ.PrimaryKey
     @SEQ.Column
     id: number;
 
-    @SEQ.ForeignKey(() => Models.MasterItem)
     @SEQ.Column
-    item_id: number;
-
-    
+    n: number;
 
         
     @SEQ.ForeignKey(() => Models.User)    
@@ -27,4 +24,4 @@ class UserItem extends SEQ.Model<Models.UserItem> {
 
 
 
-export default UserItem;  
+export default Item;  

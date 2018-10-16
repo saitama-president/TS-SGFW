@@ -51,7 +51,7 @@ seq.sync({})
     $p=>{
       console.log(`N:${$p.name} P: ${$p.items}`);
       $p.items.forEach($n=>{
-        console.log(`${$p.name} N= ${$n.n}`);
+        console.log(`${$p.name} N= ${$n.id}`);
       })
     }
   )

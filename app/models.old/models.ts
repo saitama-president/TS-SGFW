@@ -1,7 +1,7 @@
 import * as SEQ from "sequelize-typescript"
 import User from "./user";
 import UserUniqueCharacter from "./user/uniquecharacter";
-import UserItem from "./user/item";
+import UserItem from "../app/models/user/item";
 import MasterCharacter from "./master/character";
 
 
