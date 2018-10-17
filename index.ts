@@ -1,7 +1,7 @@
-import Express from "Express"
+import Express from "express"
 import dotenv from "dotenv";
 import DB from "./core/DB/db";
-import Common from "./core/common";
+import * as Common from "./core/common";
 import { readlink } from "fs";
 
 dotenv.config();
@@ -17,7 +17,6 @@ app.listen(
     console.log(`SERVER PROCESS START ${listen_port}`);
     app.use(Express.static(__dirname + process.env.PUBLIC_DIR||"/../public" ));
 
-    
     app.get("/a",
     (req:Express.Request,res:Express.Response)=>{
 

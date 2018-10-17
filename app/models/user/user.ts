@@ -7,7 +7,7 @@ import UserItem from "./item"
 
 
 @SEQ.Table
-class User extends SEQ.Model<Models.User.User> {
+export default class User extends SEQ.Model<Models.User.User> {
 
     @SEQ.AutoIncrement
     @SEQ.PrimaryKey
@@ -33,7 +33,3 @@ class User extends SEQ.Model<Models.User.User> {
 
 }
 
-export {
-  User,
-  UserItem
-}

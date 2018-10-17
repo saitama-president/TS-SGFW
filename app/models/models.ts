@@ -1,11 +1,23 @@
 import * as SEQ from "sequelize-typescript"
 
-import * as User from "./user/user"
-import * as Item from "./item/item"
+import * as Event from "./event/index"
+import * as Gacha from "./gacha/index"
+import * as Gradeup from "./gradeup/index"
+import * as Housing from "./housing/index"
+import * as Item from "./item/index"
+import * as Party from "./party/index"
+import * as Quest from "./quest/index"
+import * as User from "./user/index"
 
 
 
 export {
-  User,
-  Item
+  Event,
+  Gacha,
+  Gradeup,
+  Housing,
+  Item,
+  Party,
+  Quest,
+  User
 };

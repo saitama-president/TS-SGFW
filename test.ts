@@ -1,5 +1,5 @@
 import * as SEQ from "sequelize-typescript"
-import * as Models from "./models/models"
+import * as Models from "./app/models/models"
 import { Sequelize } from "sequelize-typescript/lib/models/Sequelize";
 
 const seq=new Sequelize('sqlite:./test.db');

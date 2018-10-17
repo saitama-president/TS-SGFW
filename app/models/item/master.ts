@@ -3,7 +3,7 @@ import * as Models from "../models"
 
 
 @SEQ.Table
-export default class ItemMaster extends SEQ.Model<Models.> {
+export default class ItemMaster extends SEQ.Model<Models.Item.ItemMaster> {
 
     @SEQ.AutoIncrement
     @SEQ.PrimaryKey
