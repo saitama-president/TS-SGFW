@@ -22,13 +22,13 @@ export default class User extends SEQ.Model<Models.User.User> {
 
 
     @SEQ.Column
-    birthday: Date;
+    private birthday: Date;
 
-//    @SEQ.HasMany(() => Models.UserItem)
-//    items:  Models.UserItem[];
+    @SEQ.HasMany(() => Models.User.UserItem)
+    private items:  Models.User.UserItem[];
 
-//    @SEQ.HasMany(() => Models.UserUniqueCharacter)
-//    characters:Models.UserUniqueCharacter[]
+    @SEQ.HasMany(() => Models.User.UserUniqueItem)
+    private unique_items:Models.User.UserUniqueItem[]
 
 
 }

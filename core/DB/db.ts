@@ -1,6 +1,7 @@
 import mysql, { FieldInfo, MysqlError } from "mysql"
 import DBConnection from "./DBConnection";
 import * as SEQ from "sequelize-typescript";
+import { CLIENT_RENEG_LIMIT } from "tls";
 
 
 export default class DB {
@@ -62,5 +63,11 @@ export default class DB {
           )    
     );
   }
+
+  public static ReInit(){
+    
+  }
 }
+
+
 

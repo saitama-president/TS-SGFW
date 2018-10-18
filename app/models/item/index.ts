@@ -2,9 +2,13 @@ import * as SEQ from "sequelize-typescript"
 import * as Models from "../models"
 
 
-import ItemMaster from "./master"
+import MasterItem from "./master"
+import MasterTaggedItem from "./TaggedItem"
+import MasterItemTag from "./ItemTag"
 
 
 export {
-    ItemMaster
+    MasterItem,
+    MasterTaggedItem,
+    MasterItemTag,
   }

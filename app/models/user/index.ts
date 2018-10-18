@@ -3,9 +3,11 @@ import * as Models from "../models"
 
 import User from "./user"
 import UserItem from "./item"
+import UserUniqueItem from "./item"
 
 
 export {
     User,
-    UserItem
+    UserItem,
+    UserUniqueItem
   }
