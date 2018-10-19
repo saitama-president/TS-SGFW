@@ -31,14 +31,7 @@ export default class DB {
   protected constructor() 
   {
     this.$connection = new SEQ.Sequelize("sqlite:./test2.db");
-    /*
-    this.$connection = mysql.createConnection({
-      "host": process.env.DB_HOST,
-      "user": process.env.DB_USER,
-      "password": process.env.DB_PASS,
-      "database": process.env.DB_DATABASE
-    });
-    */
+
   }
   
   
@@ -64,8 +57,11 @@ export default class DB {
     );
   }
 
+
   public static ReInit(){
-    
+    this.Instance.Connection.addModels([
+      
+    ]);
   }
 }
 
