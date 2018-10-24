@@ -1,4 +1,4 @@
-import Express from "express"
+import * as Express from "express"
 import dotenv from "dotenv";
 import DB from "./core/DB/db";
 import * as Common from "./core/common";
@@ -6,7 +6,7 @@ import { readlink } from "fs";
 
 dotenv.config();
 
-const app:Express.Express=Express();
+const app=Express();
 const router:Express.Router = Express.Router();
 
 const listen_port=process.env.LISTEN_PORT||9000;
